@@ -83,9 +83,13 @@ export default {
 ```
 
 ## Preview
+##### Knowledge base index page
 ![Index](https://i.imgur.com/hiO2kdz.png)
+##### Knowledge base category page
 ![Category page](https://i.imgur.com/rPRFoF0.png)
+##### Product page
 ![Product page](https://i.imgur.com/Bi1yrh6.png)
+##### Product page modal
 ![Product page modal](https://i.imgur.com/F5wRSB4.png)
 
 ## Contributing
