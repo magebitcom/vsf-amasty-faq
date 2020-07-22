@@ -9,6 +9,7 @@ export interface FaqQuestion {
   short_answer: string,
   url_key: string,
   question_category_ids: number[],
+  product_ids?: number[],
   answer: string
 }
 

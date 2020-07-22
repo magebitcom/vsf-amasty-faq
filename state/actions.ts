@@ -37,6 +37,23 @@ const actions: ActionTree<FaqState, RootState> = {
     commit(FAQ_ADD_QUESTION, question)
 
     return question
+  },
+
+  async loadProductQuestions ({ commit }, productId: number) {
+    const { items } = await QuestionService.getFaqQuestions({
+      filters: {
+        product_ids: { in: productId }
+      }
+    })
+
+    commit(FAQ_ADD_QUESTIONS, items)
+
+    return items
+  },
+
+  async ask (context, data: { name: string, email: string, question: string, productId: number }) {
+    const response = await QuestionService.ask(data.name, data.email, data.question, data.productId)
+    return response
   }
 }
 

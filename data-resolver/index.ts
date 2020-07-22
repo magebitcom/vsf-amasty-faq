@@ -1,13 +1,13 @@
 import config from 'config';
-import { processURLAddress } from '@vue-storefront/core/helpers';
+import { processURLAddress } from '@vue-storefront/core/helpers'
 import { TaskQueue } from '@vue-storefront/core/lib/sync'
 import get from 'lodash-es/get'
 import { SearchQuery } from 'storefront-query-builder'
 import { quickSearchByQuery } from '@vue-storefront/core/lib/search'
 
-const ask = async (name: string, email: string, question: string, productId: number): Promise<boolean> => {
+const ask = async (name: string, email: string, question: string, productId: number): Promise<any> => {
   const response = await TaskQueue.execute({
-    url: processURLAddress(config.faq.endpoint),
+    url: processURLAddress(config['amasty-faq'].endpoint),
     payload: {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -16,7 +16,7 @@ const ask = async (name: string, email: string, question: string, productId: num
     }
   })
 
-  return response.code === 200
+  return response
 }
 
 const getFaqQuestions = async ({

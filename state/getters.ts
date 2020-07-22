@@ -27,6 +27,11 @@ const getters: GetterTree<FaqState, RootState> = {
     return state.questions.filter(question => {
       return question.question_category_ids.indexOf(category.id) >= 0
     })
+  },
+  getProductQuestions: state => (product: any) => {
+    return state.questions.filter(question => {
+      return question.product_ids && question.product_ids.indexOf(product.id) >= 0
+    })
   }
 }
 
